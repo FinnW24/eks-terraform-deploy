@@ -6,7 +6,7 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws//modules/aws-auth"
   version = "20.20.0"
 
-  cluster_name    = var.cluster_name
+  cluster_name    = dominion-cluster
   cluster_version = "1.29"
 
   cluster_endpoint_public_access = true

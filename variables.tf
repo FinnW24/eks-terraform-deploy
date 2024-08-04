@@ -5,7 +5,7 @@
 
 variable "main-region" {
   type    = string
-  default = "us-west-2"
+  default = "us-east-1"
 }
 
 
@@ -20,7 +20,7 @@ variable "cluster_name" {
 
 variable "rolearn" {
   description = "Add admin role to the aws-auth configmap"
-  default     = "arn:aws:iam::322266404742:role/terraform-create-role"
+  default     = "arn:aws:iam::905418447609:role/adminrole"
 }
 
 ################################################################################
@@ -76,14 +76,14 @@ variable "sso_admin_group_id" {
   description = "AWS_SSO Admin Group ID"
   type        = string
   sensitive   = true
-  default     = "b4f8f4f8-e011-7046-0637-993dc10edd76"
+  default     = "AGPA5FTZFDL4RRVTUAQLT"
 }
 
-# variable "ami_id" {
-#   description = "The AMI ID for the instances"
-#   type        = string
-#   default     = "ami-03c983f9003cb9cd1"
-# }
+variable "ami_id" {
+   description = "The AMI ID for the instances"
+   type        = string
+   default     = "ami-04a81a99f5ec58529"
+ }
 
 variable "instance_type" {
   description = "The instance type for the instances"
@@ -95,7 +95,7 @@ variable "instance_type" {
 variable "key_name" {
   description = "The key name for the instances"
   type        = string
-  default     = "DevOps_key"
+  default     = "key35"
 }
 
 # variable "s3_bucket" {

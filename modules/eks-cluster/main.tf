@@ -3,7 +3,7 @@
 ################################################################################
 
 module "eks" {
-  source  = "terraform-aws-modules/eks/aws"
+  source  = "terraform-aws-modules/eks/aws//modules/aws-auth"
   version = "20.20.0"
 
   cluster_name    = var.cluster_name
@@ -60,13 +60,13 @@ module "eks" {
 
   # aws-auth configmap
   manage_aws_auth_configmap = true
-  create_aws_auth_configmap = true
+  #create_aws_auth_configmap = true
 
   aws_auth_roles = [
     {
       rolearn  = var.rolearn
-      username = "fusi"
-      groups   = ["system:masters"]
+      username = "finn"
+      groups   = ["admin"]
     },
   ]
 
